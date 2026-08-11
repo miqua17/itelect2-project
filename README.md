@@ -1,16 +1,16 @@
-#itelect2-project
+# itelect2-project
 My IT ELECTIVE 2 backend web development project.
 
 *API TESTING*
 
-GET
-![alt text](images/image-2.png)
+### GET
+![GET Request](./images/image-1.png)
 
-POST
-![alt text](images/image-3.png)
+### POST
+![POST Request](./images/image-3.png)
 
-PUT
-![alt text](images/image-4.png)
+### PUT
+![PUT Request](./images/image-4.png)
 
-DELETE
-![alt text](images/image-5.png)
+### DELETE
+![DELETE Request](./images/image-5.png)
