@@ -2,6 +2,7 @@
 My IT ELECTIVE 2 backend web development project.
 
 *API TESTING*
+
 GET
 ![alt text](images/image-2.png)
 
