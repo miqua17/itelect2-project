@@ -17,5 +17,13 @@
   "bugs": {
     "url": "https://github.com/miqua17/itelect2-project/issues"
   },
-  "homepage": "https://github.com/miqua17/itelect2-project#readme"
+  "homepage": "https://github.com/miqua17/itelect2-project#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "mysql2": "^3.23.3",
+    "pg": "^8.23.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.8",
+    "sequelize-cli": "^6.6.5"
+  }
 }
