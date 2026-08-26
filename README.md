@@ -1,16 +1,25 @@
 # itelect2-project
 My IT ELECTIVE 2 backend web development project.
 
-*API TESTING*
+## Database Schema
+
+![Tasks table](images/database_tasks.png)
+![Users table](images/database_users.png)
+
+## API Testing
 
 ### GET
-![GET Request](./images/image-1.png)
+![GET request](images/get.png)
+![GET error](images/get_error.png)
 
 ### POST
-![POST Request](./images/image-3.png)
+![POST request](images/post.png)
+![POST error](images/post_error.png)
 
 ### PUT
-![PUT Request](./images/image-4.png)
+![PUT request](images/put.png)
+![PUT error](images/put_error.png)
 
 ### DELETE
-![DELETE Request](./images/image-5.png)
+![DELETE request](images/delete.png)
+![DELETE error](images/delete_error.png)
