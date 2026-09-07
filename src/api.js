@@ -1,5 +1,6 @@
-export async function fetchSampleUsers() {
-    try {
+export async function fetchSampleUsers() { 
+ //what 
+   try {
         const res = await fetch("https://jsonplaceholder.typicode.com/users");
 
         if (!res.ok) {
