@@ -1,5 +1,5 @@
 export async function fetchSampleUsers() { 
- //what 
+ //what ve
    try {
         const res = await fetch("https://jsonplaceholder.typicode.com/users");
 
