@@ -1,16 +1,17 @@
 import express from 'express';
 import db from '../models/index.cjs';
+import { verifyToken, requireRole } from '../middleware/verifyToken.js';
 
 const { Task, User } = db;
 const router = express.Router();
 
-// GET 
+// GET /tasks
 router.get('/tasks', async (req, res) => {
   const tasks = await Task.findAll({ include: User, order: [['id', 'ASC']] });
   res.json(tasks);
 });
 
-// GET 
+// GET /tasks/:id
 router.get('/tasks/:id', async (req, res) => {
   const task = await Task.findByPk(req.params.id, { include: User });
   if (!task) {
@@ -19,14 +20,14 @@ router.get('/tasks/:id', async (req, res) => {
   res.json(task);
 });
 
-// POST 
-router.post('/tasks', async (req, res) => {
+// POST /tasks (Protected)
+router.post('/tasks', verifyToken, async (req, res) => {
   const task = await Task.create(req.body);
   res.status(201).json(task);
 });
 
-// PUT 
-router.put('/tasks/:id', async (req, res) => {
+// PUT /tasks/:id (Protected)
+router.put('/tasks/:id', verifyToken, async (req, res) => {
   const task = await Task.findByPk(req.params.id);
   if (!task) {
     return res.status(404).json({ error: `Task with id ${req.params.id} not found` });
@@ -35,8 +36,8 @@ router.put('/tasks/:id', async (req, res) => {
   res.json(task);
 });
 
-// DELETE
-router.delete('/tasks/:id', async (req, res) => {
+// DELETE /tasks/:id (Protected + Admin required)
+router.delete('/tasks/:id', verifyToken, requireRole('admin'), async (req, res) => {
   const task = await Task.findByPk(req.params.id);
   if (!task) {
     return res.status(404).json({ error: `Task with id ${req.params.id} not found` });
@@ -45,7 +46,7 @@ router.delete('/tasks/:id', async (req, res) => {
   res.status(200).json({ message: 'Task deleted', task });
 });
 
-// GET 
+// GET /users
 router.get('/users', async (req, res) => {
   const users = await User.findAll({ include: Task, order: [['id', 'ASC']] });
   res.json(users);
