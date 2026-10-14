@@ -23,3 +23,7 @@ My IT ELECTIVE 2 backend web development project.
 ### DELETE
 ![DELETE request](images/delete.png)
 ![DELETE error](images/delete_error.png)
+
+## Live Application
+Deployed API URL: https://your-app-name.onrender.com
+
